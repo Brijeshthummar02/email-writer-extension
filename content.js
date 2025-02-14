@@ -2,11 +2,25 @@ console.log("Email writer Extension - Content Script Loaded");
 
 
 function createAIButton(){
+   
+    }
 
-}
 
 function findComposeToolbar(){
-
+    const selectors = [
+        '.btC',
+        '.aDh',
+        '[role="toolbar"]',
+        'gU.Up'
+    ];
+    for (const selector in selectors) {
+        const toolbar = document.querySelector(selector);
+        if(toolbar){
+            return toolbar;
+        }
+        return null;
+            
+    }
 }
 
 
