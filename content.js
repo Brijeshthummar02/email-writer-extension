@@ -1,8 +1,16 @@
 console.log("Email writer Extension - Content Script Loaded");
 
 
+// resambling the exact gmail button
 function createAIButton(){
-   
+   const button = document.createElement('div');
+   button.className = 'T-I J-J5-Ji aoO v7 T-I-atl L3';
+   button.style.marginRight = '8px';
+   button.innerHTML = 'AI Reply'; // this is what user will see
+   button.setAttribute('role','button');
+   button.setAttribute('data-tooltip','Generate AI Reply');
+   return button;
+
     }
 
 
@@ -39,7 +47,6 @@ function injectButton(){
    button.classList.add('.ai-reply-button');
 
    button.addEventListener('click', async () => {
-
 
    });
 
