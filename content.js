@@ -1,7 +1,36 @@
 console.log("Email writer Extension - Content Script Loaded");
 
+
+function createAIButton(){
+
+}
+
+function findComposeToolbar(){
+
+}
+
+
 function injectButton(){
-    
+    const existingButton = document.querySelector('.ai-reply-button');
+   if(existingButton) existingButton.remove();
+
+   const toolbar = findComposeToolbar();
+   if(toolbar){
+    console.log("Toolbar not found");
+    return;
+   }
+
+   console.log("Toolbar found, creating AI button");
+   const button = createAIButton();
+   button.classList.add('.ai-reply-button');
+
+   button.addEventListener('click', async () => {
+
+
+   });
+
+   toolbar.insertBefore(button, toolbar.firstChild);
+
 }
 
 const observer = new MutationObserver((mutations) => {                       //helping with call back wich help us itrate with the list of changes
